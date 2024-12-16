@@ -1,21 +1,13 @@
 "use strict";
-function getDiff(fromPoint, toPoint) {
-    let dx = toPoint[0] - fromPoint[0];
-    let dy = toPoint[1] - fromPoint[1];
-    return [dx, dy];
+function printEquipment(equipment) {
+    console.log(`이름: ${equipment.name}`);
+    console.log(`이 장비는 공격력을 ${equipment.attack}, 방어력을 ${equipment.defence} 증가 시킵니다.`);
 }
-const monster = {
+const item1 = {
     id: "g001",
-    name: "고블린",
-    level: 22,
-    skills: ["태권도", "특공무술"],
-    move(fromPoint, toPoint) {
-        let [dx, dy] = getDiff(fromPoint, toPoint);
-        console.log(`오른쪽으로 ${dx} 위쪽으로 ${dy} 만큼 이동!`);
-    },
-    createdAt: new Date(),
-    updatedAt: new Date(),
+    name: "서리불꽃 글러브",
+    price: 100,
+    attack: 5,
+    defence: 42,
 };
-const current = [0, 0];
-const target = [4, 5];
-monster.move(current, target);
+printEquipment(item1);
